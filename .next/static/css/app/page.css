@@ -1,0 +1,113 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/components/organisms/HeroSection/StarfieldBackground.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Starfield – 3 layers, GPU-accelerated, seamless loop */
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  background-color: #050510;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200%;
+  background-repeat: repeat-y;
+  background-size: 100% 50%;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Layer 1: Tiny stars, slow */
+.layer1 {
+  animation: starfieldScroll1 90s linear infinite, starGlow 2.8s ease-in-out infinite;
+  background-image:
+    radial-gradient(circle 1.3px at 4% 2%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 18% 8%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 31% 14%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 1.3px at 47% 5%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 62% 18%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 79% 11%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 1.3px at 91% 6%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 7% 22%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 1.3px at 24% 28%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 39% 35%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 1.3px at 55% 24%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 68% 31%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(circle 1.3px at 83% 27%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 12% 42%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 42% 48%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 1.3px at 71% 44%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 1.3px at 96% 38%, rgba(255,255,255,0.98), transparent);
+}
+
+/* Layer 2: Medium stars, slightly faster */
+.layer2 {
+  animation: starfieldScroll2 55s linear infinite, starGlow 3.4s ease-in-out infinite;
+  background-image: 
+    radial-gradient(circle 2px at 11% 4%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 2px at 26% 12%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 2px at 52% 9%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(circle 2px at 74% 16%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 2px at 88% 3%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 2px at 6% 26%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(circle 2px at 34% 32%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 2px at 59% 28%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 2px at 81% 35%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(circle 2px at 19% 45%, rgba(255,255,255,0.98), transparent),
+    radial-gradient(circle 2px at 46% 48%, rgba(255,255,255,1), transparent),
+    radial-gradient(circle 2px at 67% 42%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(circle 2px at 93% 46%, rgba(255,255,255,0.98), transparent);
+}
+
+/* Layer 3: Distant subtle stars */
+.layer3 {
+  animation: starfieldScroll3 120s linear infinite, starGlow 4s ease-in-out infinite;
+  background-image: 
+    radial-gradient(circle 2.5px at 8% 6%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(circle 2.5px at 22% 15%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(circle 2.5px at 38% 8%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(circle 2.5px at 61% 14%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(circle 2.5px at 76% 7%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(circle 2.5px at 14% 30%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(circle 2.5px at 49% 36%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(circle 2.5px at 85% 28%, rgba(255,255,255,0.62), transparent),
+    radial-gradient(circle 2.5px at 28% 44%, rgba(255,255,255,0.68), transparent),
+    radial-gradient(circle 2.5px at 72% 48%, rgba(255,255,255,0.6), transparent);
+}
+
+@media (max-width: 768px) {
+  .layer1 { opacity: 0.95; }
+  .layer2 { opacity: 0.95; }
+  .layer3 { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer1, .layer2, .layer3 { animation: none; }
+}
+
+@keyframes starfieldScroll1 {
+  from { transform: translateY(0) translateZ(0); }
+  to { transform: translateY(-50%) translateZ(0); }
+}
+
+@keyframes starfieldScroll2 {
+  from { transform: translateY(0) translateZ(0); }
+  to { transform: translateY(-50%) translateZ(0); }
+}
+
+@keyframes starfieldScroll3 {
+  from { transform: translateY(0) translateZ(0); }
+  to { transform: translateY(-50%) translateZ(0); }
+}
+
+/* Glow then fade – subtle twinkle */
+@keyframes starGlow {
+  0%, 100% { opacity: 0.82; }
+  50% { opacity: 1; }
+}
+
