@@ -48,3 +48,23 @@ a {
   @apply text-neutral-900 dark:text-white;
 }
 
+/* Themed scrollbar for modals / overlays */
+.scrollbar-themed {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(139 92 246 / 0.6) rgb(38 38 38);
+}
+.scrollbar-themed::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-themed::-webkit-scrollbar-track {
+  background: rgb(38 38 38);
+  border-radius: 4px;
+}
+.scrollbar-themed::-webkit-scrollbar-thumb {
+  background: rgb(139 92 246 / 0.6);
+  border-radius: 4px;
+}
+.scrollbar-themed::-webkit-scrollbar-thumb:hover {
+  background: rgb(139 92 246 / 0.8);
+}
+

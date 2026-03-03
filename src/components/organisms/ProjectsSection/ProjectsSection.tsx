@@ -26,7 +26,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         </div>
 
         {/* Project cards grid — max width so cards stay a comfortable size */}
-        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 lg:gap-8">
+        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2 lg:gap-8">
           {projects.map((project) =>
             project.thumbnail ? (
               <ProjectCard

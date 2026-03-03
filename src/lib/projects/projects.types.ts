@@ -12,5 +12,15 @@ export interface Project {
   techStack?: string[];
   repoUrl?: string;
   liveUrl?: string;
+  /** Case study: overview paragraph */
+  overview?: string;
+  /** Case study: the problem section */
+  problem?: string;
+  /** Case study: approach & architecture */
+  approach?: string;
+  /** Case study: key features list */
+  keyFeatures?: string[];
+  /** Case study: impact & results */
+  impact?: string;
 }
 

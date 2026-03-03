@@ -17,8 +17,8 @@ export function HomePageTemplate({ projects }: HomePageTemplateProps) {
       <HeroSection />
       <AboutSection />
       <ProjectsSection projects={projects} />
-      <ApproachSection />
       <ServicesSection />
+      <ApproachSection />
       <ExperienceSection />
       <ContactSection />
     </>

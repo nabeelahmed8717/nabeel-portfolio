@@ -5,7 +5,7 @@ import type { Project } from '@/lib/projects/projects.types';
 import { ProjectDetailTemplate } from '@/components/templates/ProjectDetailTemplate';
 
 interface ProjectPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -16,7 +16,8 @@ export async function generateStaticParams() {
 export async function generateMetadata(
   { params }: ProjectPageProps
 ): Promise<Metadata> {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -31,7 +32,8 @@ export async function generateMetadata(
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project: Project | null = await getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project: Project | null = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
